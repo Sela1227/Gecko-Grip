@@ -66,8 +66,8 @@ Gecko Grip/
 
 ## 版本
 
-V0.5.0（前身為 SELA Vocab V0.1.0–V0.3.0）
+V0.5.1（前身為 SELA Vocab V0.1.0–V0.3.0）
 
 ---
 
-> Made by **SELA** · V0.5.0
+> Made by **SELA** · V0.5.1
