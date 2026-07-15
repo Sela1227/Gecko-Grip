@@ -34,7 +34,13 @@ Leitner 五盒間隔重複演算法，幫助你高效記憶英文單字。
 
 ## 使用方式
 
-雙擊 `index.html`，或部署到 GitHub Pages。無需安裝、無帳號、完全離線可用。
+雙擊 `index.html`，或部署到 GitHub Pages。無帳號、無後端。
+
+### 安裝為 App（PWA）
+
+經 https 或本機伺服器開啟後，可從瀏覽器選單「加入主畫面」安裝，之後像原生 App 一樣從桌面啟動、全螢幕執行。
+
+**離線可完整練習** —— 詞庫、釋義、排程全部內嵌。需要連線的只有字典真人錄音與英文定義；離線時自動改用系統語音，中文釋義與 Leitner 排程完全不受影響。
 
 ```bash
 # 本機預覽（推薦）
@@ -83,13 +89,15 @@ python -m http.server 8000
 
 ```
 Gecko Grip/
-├── index.html          主程式（含詞庫、邏輯、樣式）
+├── index.html              主程式（含詞庫、邏輯、樣式）
+├── manifest.webmanifest    PWA manifest（須在根目錄，scope 才正確）
+├── sw.js                   Service Worker（離線快取）
 ├── assets/
-│   └── sela.svg        SELA 品牌標識
-├── favicon/            完整 favicon 套組
-├── CLAUDE.md           給 Claude 的工作上下文
-├── SELA-handoff.md     給 Kit Claude 的升 Kit 素材
-├── README.md           本檔
+│   └── sela.svg            SELA 品牌標識
+├── favicon/                完整 favicon 套組
+├── CLAUDE.md               給 Claude 的工作上下文
+├── SELA-handoff.md         給 Kit Claude 的升 Kit 素材
+├── README.md               本檔
 └── .gitignore
 ```
 
@@ -99,8 +107,8 @@ Gecko Grip/
 
 ## 版本
 
-V0.7.0（前身為 SELA Vocab V0.1.0–V0.3.0）
+V0.8.0（前身為 SELA Vocab V0.1.0–V0.3.0）
 
 ---
 
-> Made by **SELA** · V0.7.0
+> Made by **SELA** · V0.8.0
