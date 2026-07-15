@@ -73,6 +73,7 @@ Gecko Grip/
 │   └── sela.svg        SELA 品牌標識
 ├── favicon/            完整 favicon 套組
 ├── CLAUDE.md           給 Claude 的工作上下文
+├── SELA-handoff.md     給 Kit Claude 的升 Kit 素材
 ├── README.md           本檔
 └── .gitignore
 ```
@@ -83,8 +84,8 @@ Gecko Grip/
 
 ## 版本
 
-V0.6.0（前身為 SELA Vocab V0.1.0–V0.3.0）
+V0.6.1（前身為 SELA Vocab V0.1.0–V0.3.0）
 
 ---
 
-> Made by **SELA** · V0.6.0
+> Made by **SELA** · V0.6.1

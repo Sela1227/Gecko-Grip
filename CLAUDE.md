@@ -9,7 +9,7 @@
 
 ## 〇、當前狀態
 
-- **版本：** V0.6.0
+- **版本：** V0.6.1
 - **狀態：** 可運作
 - **一句話定位：** 個人英文單字間隔重複練習工具，英文顯示 → 中文遮蔽 → Space 揭示 → 可選拼字測試（開啟時英文反向遮蔽），Leitner 五盒 + 失誤懲罰排程，雙詞庫（通用萬字 + 醫學專業）
 - **命名由來：** 壁虎腳掌的 van der Waals 抓力 = 單字牢牢黏住不放；呼應 SELA 品牌壁虎標記
@@ -52,6 +52,7 @@
 | 「補考不給升級」規則 | `index.html` JS `grade(word,ok,relearn)` 的 `relearn` 分支；呼叫端 `answer()` 傳 `sessWrong.has(w)` |
 | 英文定義的抓取／過濾 | `index.html` JS `lookup()` 與 `NOISE_DEF` 正規表達式（見坑 P9） |
 | 拼字遮罩行為 | `index.html` JS `maskWord()` / `unmaskWord()` / `toggleTyping()` / `checkTyping()` 四者連動，改一個要看其他三個 |
+| handoff（給 Kit Claude）| `SELA-handoff.md`（**與 CLAUDE.md 讀者不同**：這份給下次專案 Claude、那份給升 Kit 用的 Kit Claude）|
 | 版本號 | `index.html` JS `const VERSION` + `<title>` + `.ver` 顯示（三處同步） |
 | Logo | `assets/sela.svg`（取自 SELA Starter Kit，不可替換） |
 | Favicon | `favicon/` 整個目錄（已含完整 Kit 套組，正常不用改） |
@@ -188,6 +189,7 @@ console.log('JS 語法通過');
 | V0.1.0 | 通用英文萬字 Leitner 練習，英文顯示 → 揭示英文定義，dictionaryapi.dev 真人錄音 |
 | V0.2.0 | 改中文先考（英文遮蔽）、醫學詞彙 252 個（CLI/LAB/ONC/RAD/RES）、9,767 詞離線 ZH map |
 | V0.3.0 | 回歸英文先考（中文遮蔽）、揭示後可選拼字測試（T）、首次依 SELA Starter Kit V1.23.1 規範打包，色盤對齊 Kit（#F36825、#5A7A8B、#FAFBFC）、使用真正 sela.svg |
+| V0.6.1 | 交付物補完：首次產出 `SELA-handoff.md`（坑 P6–P11 分類完畢：4 條建議進 Kit、2 條留專案；另回報 Kit 自身 3 處問題）。**無程式變更** |
 | V0.6.0 | **排程大修**：① 同回合補考答對不再給升級，停 Box1 明天重考（坑 P11）② 加失誤懲罰 `LAPSE_MULT`，曾錯的字間隔永久縮短、Box5 到頂也只有 14–21 天而非 30 天 ③ 盒標籤改由 `BOX_DAYS` 衍生，修掉說謊三版的 `Box2·隔日`（坑 P10）④ 卡片加「曾錯 N 次 · 間隔 ×0.7」標籤、首頁加曾錯註記 |
 | V0.5.1 | 修 `lookup()`：只取首筆 entry、濾掉方言／變體拼法類定義、同詞性合併 — 解決 `year` 顯示三個 noun 且混入 here/hear 釋義的問題（新增坑 P9） |
 | V0.5.0 | 拼字測試改為**真正的主動回想**：開啟時英文反向遮蔽為底線（保留字數提示），確認後才揭曉並比對「你打的 vs 正確」；四個進出點皆解除遮罩（新增坑 P8） |
@@ -208,4 +210,4 @@ console.log('JS 語法通過');
 
 ## 八、一句話總結
 
-V0.6.0：排程大修 —— 補考答對不再給白吃的升級（P11）、曾錯的字間隔永久縮短且永遠不會畢業、盒標籤改由資料衍生修掉說謊三版的錯誤標示（P10）。下版第一優先是「拼字結果餵回 Leitner 評分」，因為那是目前唯一還在說謊的路徑：系統明知你拼錯卻假裝沒看到。
+V0.6.1：補上 V0.6.0 該產而未產的 `SELA-handoff.md`（違反鐵律 #0 的補救）。程式無變更。下版第一優先仍是「拼字結果餵回 Leitner 評分」，因為那是目前唯一還在說謊的路徑：系統明知你拼錯卻假裝沒看到。
